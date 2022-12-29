@@ -1,3 +1,7 @@
-<p>
-  home works!
-</p>
+<div style="display: flex; flex-direction: column">
+  <input [(ngModel)]="searchTerm" (change)="searchTermChange()" />
+  <input [(ngModel)]="cursor" />
+  <textarea rows="20">{{ getGraphQl() }}</textarea>
+  <textarea rows="20" [(ngModel)]="data" (change)="dataChange()"></textarea>
+  <button (click)="loadData()">Load</button>
+</div>
