@@ -35,6 +35,10 @@ export class Group extends EntityBase {
     maxLength: 4000
   })
   description = ''
+  @Fields.string()
+  organizer = ''
+  @Fields.string()
+  organizerEmail = ''
   @Fields.integer()
   members = 0
   @Fields.string()

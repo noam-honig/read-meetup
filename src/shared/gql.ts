@@ -50,6 +50,11 @@ export interface GroupInfo {
   country: string;
   foundedDate: any;
   description: string;
+  organizer:{
+    id:string
+    name:string
+    email:string
+  }
   latitude: number;
   longitude: number;
   stats: Stats;

@@ -35,6 +35,8 @@ export async function loadDataArray(searchTerm: string, edges: import("c:/Repos/
       state: groupInfo.state,
       longitude: groupInfo.longitude,
       latitude: groupInfo.latitude,
+      organizer: groupInfo.organizer?.name,
+      organizerEmail: groupInfo.organizer?.email,
       topicCategory: groupInfo.topicCategory?.name ?? ""
     }).save();
     await remult.repo(groupsInSearch).insert({

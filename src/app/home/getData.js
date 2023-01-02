@@ -66,6 +66,11 @@ query searchGroups {
             id
             name
           }
+          organizer{
+      id
+      name
+      email
+    }
           topicCategory{
             id
             name
