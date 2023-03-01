@@ -19,6 +19,10 @@ async function test(search) {
   while (true) {
     console.log({ search, cursor, length: all.length })
     let r = await get(search, cursor);
+    if (!r.data){
+      console.log("failed "+search,r.errors)
+      return;
+    }
     all.push(...r.data.keywordSearch.edges)
     cursor = r.data.keywordSearch.pageInfo.endCursor;
     if (!cursor)
@@ -33,7 +37,7 @@ async function get(search, cursor) {
   const query = `#graphql
 query searchGroups {
   keywordSearch(
-    input: {first: 50
+    input: {first: 10
      ${cursor ? `after:"${cursor}"` : ''}
     }
     filter: {query: "${search}", lat: 51.5072, lon: 0.1276, radius: 20000, source: GROUPS}
@@ -132,6 +136,6 @@ query searchGroups {
   return await fetch('https://api.meetup.com/gql', { method: 'POST', headers: { "Content-Type": 'application/json' }, body: JSON.stringify({ query }) }).then(x => x.json())
 }
 
-for (const what of ['javascript', 'angular', 'node', 'react', 'vue']) {
+for (const what of ['aws', 'devops', 'node', 'python', 'golang']) {
   await test(what)
 }
