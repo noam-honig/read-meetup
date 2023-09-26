@@ -1,91 +1,90 @@
-
-
 export interface PageInfo {
-  endCursor: string;
+  endCursor: string
 }
 
 export interface MemberCounts {
-  all: number;
+  all: number
 }
 
 export interface Stats {
-  memberCounts: MemberCounts;
+  memberCounts: MemberCounts
 }
 
 export interface Topic {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 
 export interface TopicCategory {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 
 export interface EventInfo {
-  id: string;
-  title: string;
-  dateTime: string;
-  eventType: string;
-  going: number;
-  description: string;
-  shortDescription?: any;
-  shortUrl: string;
+  id: string
+  title: string
+  dateTime: string
+  eventType: string
+  going: number
+  description: string
+  shortDescription?: any
+  shortUrl: string
 }
 
 export interface Edge2 {
-  node: EventInfo;
+  node: EventInfo
 }
 
 export interface UnifiedEvents {
-  edges: Edge2[];
+  edges: Edge2[]
 }
 
 export interface GroupInfo {
-  id: string;
-  name: string;
-  link: string;
-  city: string;
-  state: string;
-  country: string;
-  foundedDate: any;
-  description: string;
-  organizer:{
-    id:string
-    name:string
-    email:string
+  id: string
+  name: string
+  link: string
+  city: string
+  state: string
+  country: string
+  foundedDate: any
+  description: string
+  organizer: {
+    id: string
+    name: string
+    email: string
   }
-  latitude: number;
-  longitude: number;
-  stats: Stats;
-  topics: Topic[];
-  topicCategory: TopicCategory;
-  pastEvents: UnifiedEvents;
-  unifiedEvents: UnifiedEvents;
-  upcomingEvents: UnifiedEvents;
+  latitude: number
+  longitude: number
+  stats: Stats
+  topics: Topic[]
+  topicCategory: TopicCategory
+  pastEvents: UnifiedEvents
+  unifiedEvents: UnifiedEvents
+  upcomingEvents: UnifiedEvents
+  lastEvent?: EventInfo
 }
 
 export interface Node {
-  id: string;
-  result: GroupInfo;
+  id: string
+  result: GroupInfo
 }
 
 export interface Edge {
-  node: Node;
+  node: Node
 }
 
 export interface KeywordSearch {
-  count: number;
-  pageInfo: PageInfo;
-  edges: Edge[];
+  count: number
+  pageInfo: PageInfo
+  edges: Edge[]
 }
 
 export interface Data {
-  keywordSearch: KeywordSearch;
+  keywordSearch: KeywordSearch
 }
 
 export interface gqlResult {
-  data: Data;
+  data: Data
 }
 
 /*
